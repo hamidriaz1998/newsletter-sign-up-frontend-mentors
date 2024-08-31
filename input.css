@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.normal-input {
+  @apply focus-visible:border-dark-slate-grey  border-grey;
+}
+
+.error-input {
+  @apply focus-visible:border-tomato focus-visible:border-2 border-tomato bg-tomato bg-opacity-10 text-tomato;
+}

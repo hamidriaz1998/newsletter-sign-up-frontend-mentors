@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="./output.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Add Roboto font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>
+            Frontend Mentor | Newsletter sign-up form with success message
+        </title>
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+            @media (min-width: 768px) {
+                .attribution {
+                    color: white;
+                }
+                .attribution a {
+                    filter: invert(1);
+                }
+            }
+            .btn {
+                transition: background 0.3s ease;
+            }
+            .btn:hover {
+                background: rgb(253, 149, 73);
+                background: linear-gradient(
+                    270deg,
+                    rgba(253, 149, 73, 1) 3%,
+                    rgba(228, 128, 128, 1) 56%,
+                    rgba(235, 75, 113, 1) 96%
+                );
+            }
+            ul li {
+                display: flex;
+            }
+
+            ul li::before {
+                content: url(assets/images/icon-list.svg);
+                margin-right: 1rem;
+            }
+        </style>
+    </head>
+
+    <body class="md:bg-charcoal-grey">
+        <main
+            class="flex justify-center items-center font-roboto text-base font-normal w-full"
+        >
+            <div
+                class="card w-screen flex flex-col gap-5 max-w-md md:flex-row-reverse md:items-center bg-white md:max-w-6xl md:py-6 md:rounded-[30px] md:m-6 md:justify-between"
+            >
+                <img
+                    src="assets/images/illustration-sign-up-mobile.svg"
+                    alt=""
+                    class="w-full md:opacity-0 md:invisible md:hidden"
+                />
+                <img
+                    src="assets/images/illustration-sign-up-desktop.svg"
+                    alt=""
+                    class="w-full rounded-xl opacity-0 invisible hidden md:opacity-100 md:visible md:block md:max-w-96 md:max-h-[32rem] md:flex-grow lg:m-6"
+                />
+                <div class="content p-6 lg:ml-6">
+                    <div class="text mb-8">
+                        <h1 class="font-bold text-4xl mb-4">Stay updated!</h1>
+                        <p class="mb-4">
+                            Join 60,000+ product managers receiving monthly
+                            updates on:
+                        </p>
+                        <ul
+                            class="list-outside list-image-[url(assets/images/icon-list.svg)] flex flex-col gap-2"
+                        >
+                            <li>Product discovery and building what matters</li>
+                            <li>Measuring to ensure updates are a success</li>
+                            <li>And much more!</li>
+                        </ul>
+                    </div>
+                    <div class="form">
+                        <form
+                            action="#"
+                            method="post"
+                            class="flex flex-col gap-4"
+                        >
+                            <div class="input-group">
+                                <div
+                                    class="label-group flex justify-between mb-3"
+                                >
+                                    <label for="email" class="font-bold text-xs"
+                                        >Email address</label
+                                    >
+                                    <p
+                                        class="font-bold text-xs text-tomato"
+                                        id="error-field"
+                                    ></p>
+                                </div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="email@company.com"
+                                    required
+                                    class="input w-full p-3 rounded-lg border mb-3 focus-visible:outline-none focus-visible:border-2 normal-input"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn w-full p-3 rounded-lg font-bold bg-dark-slate-grey text-white"
+                            >
+                                Subscribe to monthly newsletter
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Hamid Riaz</a>.
+        </div>
+    </body>
+</html>
