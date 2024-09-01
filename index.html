@@ -10,7 +10,8 @@
             href="./assets/images/favicon-32x32.png"
         />
         <link rel="stylesheet" href="./output.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
         <!-- Add Roboto font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +42,8 @@
             .btn {
                 transition: background 0.3s ease;
             }
-            .btn:hover {
+            .btn:hover,
+            .btn:focus {
                 background: rgb(253, 149, 73);
                 background: linear-gradient(
                     270deg,
@@ -61,9 +63,12 @@
         </style>
     </head>
 
-    <body class="md:bg-charcoal-grey">
+    <body
+        class="md:bg-charcoal-grey flex items-center justify-center flex-col h-screen"
+    >
         <main
             class="flex justify-center items-center font-roboto text-base font-normal w-full"
+            id="newsletter"
         >
             <div
                 class="card w-screen flex flex-col gap-5 max-w-md md:flex-row-reverse md:items-center bg-white md:max-w-6xl md:py-6 md:rounded-[30px] md:m-6 md:justify-between"
@@ -94,11 +99,7 @@
                         </ul>
                     </div>
                     <div class="form">
-                        <form
-                            action="#"
-                            method="post"
-                            class="flex flex-col gap-4"
-                        >
+                        <form novalidate class="flex flex-col gap-4">
                             <div class="input-group">
                                 <div
                                     class="label-group flex justify-between mb-3"
@@ -131,6 +132,33 @@
                 </div>
             </div>
         </main>
+        <main
+            class="hide justify-center items-center font-roboto text-base font-normal w-full"
+            id="success"
+        >
+            <div
+                class="card bg-white p-6 h-screen flex flex-col justify-center max-w-md sm:rounded-2xl md:p-9 md:h-[28rem] md:w-fit mb-5"
+            >
+                <img
+                    src="assets/images/icon-success.svg"
+                    class="mb-8 w-16"
+                    alt=""
+                />
+                <h1 class="font-bold text-4xl mb-4">Thanks for subscribing!</h1>
+                <p class="mb-10">
+                    A confirmation email has been sent to
+                    <span class="email-address font-bold"></span>. Please open
+                    it and click the button inside to confirm your subscription
+                </p>
+                <button
+                    class="btn w-full p-3 rounded-lg font-bold bg-dark-slate-grey text-white"
+                    id="dismiss-button"
+                >
+                    Dismiss message
+                </button>
+            </div>
+        </main>
+
         <div class="attribution">
             Challenge by
             <a
